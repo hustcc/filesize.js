@@ -1,0 +1,42 @@
+{
+  "name": "filesize.js",
+  "officialName": "filesize.js",
+  "version": "1.0.1",
+  "summary": "filesize.js is a simple browserjs / nodejs library to make filesize human-readable.",
+  "description": "filesize.js is a simple browserjs / nodejs library to make filesize human-readable.",
+  "author": {
+    "name": "hustcc",
+    "url": "http://www.aTool.org/"
+  },
+  "license": "MIT",
+  "keywords": [
+    "filesize.js",
+    "filesize",
+    "human-readable",
+    "*** kb",
+    "iec",
+    "is"
+  ],
+  "main": "dist/filesize.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hustcc/filesize.js"
+  },
+  "bugs": {
+    "url": "https://github.com/hustcc/filesize.js/issues"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-uglify": "^1.5.3",
+    "jshint": "^2.9.2",
+    "gulp-rename": "^1.2.2",
+    "tape": "^3.6.1"
+  },
+  "scripts": {
+    "lint": "jshint src/filesize.js",
+    "test": "npm run lint && node tests/test.js",
+    "build": "gulp mini && npm run test"
+  },
+  "dependencies": {
+  }
+}
