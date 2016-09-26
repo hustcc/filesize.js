@@ -38,6 +38,18 @@ test('filesize.js show be tested', function (t) {
     bytes *= 1024;
   };
 
+
+  // test negative
+  bytes = -1.98765;
+  for (i = 0; i < jedec.length; i++) {
+    unit = jedec[i];
+    t.equal(filesize(bytes), '2.0 ' + unit + 'b');  // default fixed = 1
+    t.equal(filesize(bytes, null, 'jedec'), '2.0 ' + unit + 'b'); // default fixed = 1
+    t.equal(filesize(bytes, 2, 'not_exist_spec'), '1.99 ' + unit + 'b'); // default spec = 'jedec'
+
+    t.equal(filesize(bytes, 4), '1.9876 ' + unit + 'b'); // test fixed = 3
+    bytes *= 1024;
+  };
   // bytes
   t.equal(filesize(123456), '120.6 Kb');
   // fixed

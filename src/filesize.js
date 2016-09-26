@@ -35,6 +35,7 @@ function () {
    *  return the formated string of filesize
   **/
   return function(bytes, fixed, spec) {
+      bytes = Math.abs(bytes);
       // set default parameter `fixed`, default is 1.
       if (!fixed && fixed !== 0) fixed = 1;
 
