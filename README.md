@@ -25,6 +25,12 @@ Or import it with `<script>` tag.
 <script type="text/javascript" src="filesize.min.js"></script>
 ```
 
+Then use `filesize` API.
+
+```js
+var fs = filesize(123456789); // fs = '117.7 Mb'
+```
+
 
 # 2. Detail Usage
 
@@ -52,6 +58,7 @@ filesize(123456, 0, 'si'); 		// '123 Kb'
 # 3. Test
 
 > npm install
+
 > npm test
 
 
@@ -61,7 +68,7 @@ filesize(123456, 0, 'si'); 		// '123 Kb'
  - [iec](http://www.electropedia.org/iev/iev.nsf/index?openform&part=112): Unit is ```['b', 'Kib', 'Mib', 'Gib', 'Tib', 'Pib', 'Eib', 'Zib', 'Yib']```, and the power is **1024**.
  - [si](https://zh.wikipedia.org/wiki/%E5%9B%BD%E9%99%85%E5%8D%95%E4%BD%8D%E5%88%B6): Unit is ```['b', 'Kb', 'Mb', 'Gb', 'Tb', 'Pb', 'Eb', 'Zb', 'Yb']```, and the power is **1000**.
 
-More specs waiting for you issue / pull request.
+More specs **waiting for your issues / pull requests**.
 
 
 # 5. LICENSE
