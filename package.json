@@ -4,9 +4,65 @@
   "version": "1.0.2",
   "summary": "filesize.js is a simple browserjs / nodejs library to make filesize human-readable.",
   "description": "filesize.js is a simple browserjs / nodejs library to make filesize human-readable.",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "clean": "rimraf -rf lib",
+    "lint": "eslint src/**/*",
+    "lint-staged": "lint-staged",
+    "test": "jest",
+    "start": "tsc -w",
+    "ci": "npm run lint && npm run test",
+    "build": "npm run clean && tsc",
+    "prepublishOnly": "npm run build",
+    "coveralls": "cat ./coverage/lcov.info | coveralls"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@commitlint/cli": "^8.2.0",
+    "@types/jest": "^24.0.18",
+    "@typescript-eslint/eslint-plugin": "^2.3.1",
+    "@typescript-eslint/parser": "^2.3.1",
+    "coveralls": "^3.0.6",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "husky": "^3.0.5",
+    "jest": "^24.9.0",
+    "jest-electron": "^0.1.7",
+    "lint-staged": "^9.3.0",
+    "prettier": "^1.18.2",
+    "rimraf": "^3.0.0",
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.3"
+  },
+  "jest": {
+    "runner": "jest-electron/runner",
+    "testEnvironment": "jest-electron/environment",
+    "preset": "ts-jest",
+    "collectCoverage": true,
+    "testRegex": "(/__tests__/.*\\.(test|spec))\\.ts$",
+    "collectCoverageFrom": [
+      "src/**/*.ts"
+    ]
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "eslint --fix",
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
   "author": {
     "name": "hustcc",
-    "url": "http://www.aTool.org/"
+    "url": "https://aTool.vip/"
   },
   "license": "MIT",
   "keywords": [
@@ -18,26 +74,11 @@
     "is",
     "jedec"
   ],
-  "main": "dist/filesize.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/hustcc/filesize.js"
   },
   "bugs": {
     "url": "https://github.com/hustcc/filesize.js/issues"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.0",
-    "gulp-uglify": "^1.5.3",
-    "jshint": "^2.9.2",
-    "gulp-rename": "^1.2.2",
-    "tape": "^3.6.1"
-  },
-  "scripts": {
-    "lint": "jshint src/filesize.js",
-    "test": "npm run lint && node tests/test.js",
-    "build": "gulp mini && npm run test"
-  },
-  "dependencies": {
   }
 }
