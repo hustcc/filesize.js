@@ -1,7 +1,7 @@
 {
   "name": "filesize.js",
   "officialName": "filesize.js",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "summary": "filesize.js is a simple browserjs / nodejs library to make filesize human-readable.",
   "description": "filesize.js is a simple browserjs / nodejs library to make filesize human-readable.",
   "main": "lib/index.js",
