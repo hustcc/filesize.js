@@ -3,7 +3,7 @@
 > **filesize.js** is a nano(350 b) library to make file size bytes **human-readable**. e.g. 20.4 Kb.
 
 [![Build Status](https://travis-ci.org/hustcc/filesize.js.svg?branch=master)](https://travis-ci.org/hustcc/filesize.js)
-[![npm](https://img.shields.io/npm/v/filesize.js.svg?style=flat-square)](https://www.npmjs.com/package/filesize.js)
+[![npm](https://img.shields.io/npm/v/filesize.js.svg)](https://www.npmjs.com/package/filesize.js)
 [![npm](https://img.shields.io/npm/dm/filesize.js.svg)](https://www.npmjs.com/package/filesize.js)
 [![npm](https://img.shields.io/npm/l/filesize.js.svg)](https://www.npmjs.com/package/filesize.js)
 
